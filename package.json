@@ -1,0 +1,25 @@
+{
+  "name": "ieee-unilag-sb",
+  "version": "1.0.0",
+  "description": "IEEE UNILAG Student Branch - Backend API",
+  "private": true,
+  "packageManager": "pnpm@10.28.2",
+  "scripts": {
+    "dev:backend": "pnpm --filter backend dev",
+    "build:backend": "pnpm --filter backend build",
+    "start:backend": "pnpm --filter backend start",
+    "lint:backend": "pnpm --filter backend lint",
+    "lint:fix:backend": "pnpm --filter backend lint --fix",
+    "format:backend": "pnpm --filter backend format",
+    "format:check:backend": "pnpm --filter backend format:check"
+  },
+  "keywords": [
+    "ieee",
+    "unilag",
+    "student-branch",
+    "backend",
+    "api"
+  ],
+  "author": "",
+  "license": "ISC"
+}
