@@ -3,6 +3,10 @@
 	"version": "0.0.0",
 	"private": true,
 	"scripts": {
+		"dev": "ts-node-dev --respawn --transpile-only --ignore-watch node_modules server.ts",
+		"build": "tsc -p tsconfig.json",
+		"start": "node dist/server.js",
+		"lint": "eslint . --ext .ts"
 	},
 	"dependencies": {
 		"cookie-parser": "~1.4.4",
@@ -14,5 +18,16 @@
 		"helmet": "^8.1.0",
 		"mongoose": "^9.1.5",
 		"morgan": "1.10.1"
+	},
+	"devDependencies": {
+		"@types/cors": "^2.8.19",
+		"@types/express": "^5.0.6",
+		"@types/morgan": "^1.9.10",
+		"@types/node": "^25.1.0",
+		"@typescript-eslint/eslint-plugin": "^8.54.0",
+		"@typescript-eslint/parser": "^8.54.0",
+		"eslint": "^9.39.2",
+		"ts-node-dev": "^2.0.0",
+		"typescript": "^5.9.3"
 	}
 }
