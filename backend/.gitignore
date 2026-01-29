@@ -1,24 +1,37 @@
+# Dependencies
 node_modules/
+
+# Installer lockfiles
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-package-lock.json # Optional: Some teams commit this, some don't. Usually safer to commit it.
 
+# Environment files
 .env
 .env.local
 .env.*.local
 
+# Build output
+dist/
+out/
+
+# Logs
+logs/
+*.log
+
+# Coverage
+coverage/
+
+# IDE / editor settings
+.vscode/
 .idea/
 *.iml
 *.iws
 *.ipr
-out/
 
-.vscode/
-.DS_Store       # Mac system file
-Thumbs.db       # Windows system file
-
-logs/
-*.log
-coverage/       # If you add testing later
-dist/           # If you add a build step later
+# OS files
+.DS_Store
+Thumbs.db
