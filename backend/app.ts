@@ -3,7 +3,6 @@ import cors from "cors";
 import helmet from "helmet";
 import morgan from "morgan";
 import { errorHandler } from "./middleware/error";
-import newsletterRoutes from "./routes/newsletter";
 import apiRouter from "./routes";
 
 const app = express();
