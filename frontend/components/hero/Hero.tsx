@@ -101,7 +101,7 @@ export function Hero() {
   return (
     <section className="relative min-h-screen pt-20 lg:pt-24 overflow-hidden">
       {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-primary/5 -z-10" />
+      <div className="absolute inset-0 bg-linear-to-br from-background via-background to-primary/5 -z-10" />
 
       <div className="container mx-auto px-4 lg:px-8">
         {/* Main Hero Content */}
@@ -159,9 +159,9 @@ export function Hero() {
             animate="visible"
             className="relative"
           >
-            <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl">
+            <div className="relative aspect-4/3 rounded-3xl overflow-hidden shadow-2xl">
               {/* Placeholder - replace with actual hero image */}
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20" />
+              <div className="absolute inset-0 bg-linear-to-br from-primary/20 to-secondary/20" />
               <Image
                 src="/hero-image.jpg"
                 alt="IEEE UNILAG students collaborating"
@@ -171,7 +171,7 @@ export function Hero() {
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
               {/* Decorative overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-foreground/10 to-transparent" />
+              <div className="absolute inset-0 bg-linear-to-t from-foreground/10 to-transparent" />
             </div>
 
             {/* Decorative elements */}
