@@ -1,9 +1,10 @@
 import {Events} from "./upcoming-events" ;
-import Image from "next/image";
-
+import { EventsProvider } from '@/lib/contexts';
 
 export default function Home() {
   return (
-    <Events />
+    <EventsProvider>
+      <Events />
+    </EventsProvider>
   );
 }
