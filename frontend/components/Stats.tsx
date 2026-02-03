@@ -1,4 +1,3 @@
-import { div, label } from "motion/react-client";
 import Stat from "./Stat";
 type arrayStat = {
   label:string,
