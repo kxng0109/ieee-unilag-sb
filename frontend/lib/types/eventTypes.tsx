@@ -1,4 +1,7 @@
-export interface EventContextType {
-    isDesktop : boolean,
-    setIsDesktop : React.Dispatch<React.SetStateAction<boolean>>
+export interface EventCardType {
+    id: string,
+    image: string,
+    title: string,
+    description: string,
+    location: string,
 }

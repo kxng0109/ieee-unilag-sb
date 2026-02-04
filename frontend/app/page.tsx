@@ -1,4 +1,4 @@
-import {EventsSection} from "../components/upcoming-events" ;
+import {EventsSection} from "../components/upcoming-events/EventsSection" ;
 import Stats from "@/components/Stats";
 import WWA from "@/components/WWA"
 import Image from "next/image";
