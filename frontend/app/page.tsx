@@ -1,14 +1,16 @@
+import Stats from "@/components/Stats";
+import WWA from "@/components/WWA";
 import { Navbar } from "@/components/navbar";
 import { Hero } from "@/components/hero";
-
 export default function Home() {
   return (
-    <>
+    <div className="min-h-screen items-center justify-center">
       <Navbar />
-      <main>
+      <main className="min-h-screen items-center justify-center">
         <Hero />
-        {/* Other sections will be added by team members */}
+        <Stats />
+        <WWA />
       </main>
-    </>
+    </div>
   );
 }
