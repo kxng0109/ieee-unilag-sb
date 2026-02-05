@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
-import { Space_Grotesk} from "next/font/google";
+import { Space_Grotesk, Inter} from "next/font/google";
 import "./globals.css";
-import { Inter } from "next/font/google";
 
 export const metadata: Metadata = {
   title: "Landing Page",
@@ -12,7 +11,6 @@ const inter = Inter({
   variable: "--font-inter", 
   weight: ["400", "500", "700"], 
 });
-
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"], 
   variable: "--font-space-grotesk", 
