@@ -5,3 +5,6 @@ export interface EventCardType {
     description: string,
     location: string,
 }
+export interface EventsSectionProps {
+    data: EventCardType
+}
