@@ -44,6 +44,12 @@
   --radius-2xl: calc(var(--radius) + 8px);
   --radius-3xl: calc(var(--radius) + 12px);
   --radius-4xl: calc(var(--radius) + 16px);
+  /* IEEE Unilag design tokens */
+  --color-ieee-primary: var(--ieee-primary);
+  --color-ieee-footer-bg: var(--ieee-footer-bg);
+  --color-ieee-accent: var(--ieee-accent);
+  --color-ieee-newsletter-bg: var(--ieee-newsletter-bg);
+  --color-ieee-newsletter-text: var(--ieee-newsletter-text);
 }
 
 :root {
@@ -79,6 +85,12 @@
   --sidebar-ring: oklch(0.708 0 0);
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
+  /* IEEE Unilag palette */
+  --ieee-primary: #0f172a;
+  --ieee-footer-bg: #0f172a;
+  --ieee-accent: #38bdf8;
+  --ieee-newsletter-bg: #f1f5f9;
+  --ieee-newsletter-text: #334155;
 }
 
 .dark {
