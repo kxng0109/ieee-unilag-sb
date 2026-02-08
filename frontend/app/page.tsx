@@ -1,3 +1,4 @@
+import { EventsSection } from "../components/upcoming-events/EventsSection";
 import Stats from "@/components/Stats";
 import WWA from "@/components/WWA";
 import { Navbar } from "@/components/navbar";
@@ -10,6 +11,7 @@ export default function Home() {
         <Hero />
         <Stats />
         <WWA />
+        <EventsSection />
       </main>
     </div>
   );
