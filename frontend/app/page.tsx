@@ -3,6 +3,7 @@ import { Footer } from "@/components/footer";
 import { NewsletterSection } from "@/components/newsletter-section";
 import Stats from "@/components/Stats";
 import WWA from "@/components/WWA";
+import Spotlight from "@/components/spotlight";
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
         <Stats />
         <WWA />
         <EventsSection />
+        <Spotlight />
         <NewsletterSection />
         <Footer />
       </main>
