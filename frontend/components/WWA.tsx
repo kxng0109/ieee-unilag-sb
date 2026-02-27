@@ -8,8 +8,8 @@ const ArrayText: string[]= [
 
 const WWA = () => {
   return (
-    <div className='flex flex-col xl:flex-row justify-between bg-[#F5F8FF] min-h-[637px] items-center px-12 md:px-20 py-30 gap-0'>
-      <div className={`font-text text-[#475569] xl:shrink-0 xl:w-[607px]`}>
+    <div className='flex flex-col xl:flex-row justify-between bg-[#F5F8FF] min-h-159.25 items-center px-12 md:px-20 py-30 gap-0'>
+      <div className={`font-text text-[#475569] xl:shrink-0 xl:w-151.75`}>
         <div className='text-[#00629B] text-4xl md:text-5xl font-bold text-center lg:text-left'>
           Who We Are
         </div>
@@ -30,7 +30,7 @@ const WWA = () => {
               alt="IEEE UNILAG"
               width={200}
               height={200}
-              className="rounded-lg object-cover w-full h-auto min-w-[120px] max-w-[180px] mx-auto"
+              className="rounded-lg object-cover w-full h-auto min-w-30 max-w-45 mx-auto"
             />
           )
         })}
