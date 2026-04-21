@@ -9,8 +9,10 @@ import { Hero } from "@/components/hero";
 
 export default function Home() {
   return (
-    <div className="min-h-screen items-center justify-center">
+    <div className="min-h-screen items-center justify-center font-sans">
+      <Navbar />
       <main className="">
+        <Hero />
         <Stats />
         <WWA />
         <EventsSection />
