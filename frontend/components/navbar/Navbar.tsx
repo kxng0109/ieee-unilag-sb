@@ -24,7 +24,6 @@ const navItemVariants = {
     transition: {
       delay: i * 0.1,
       duration: 0.4,
-      ease: "easeOut",
     },
   }),
 };
@@ -36,7 +35,6 @@ const logoVariants = {
     x: 0,
     transition: {
       duration: 0.5,
-      ease: "easeOut",
     },
   },
 };
@@ -49,7 +47,6 @@ const buttonVariants = {
     transition: {
       delay: 0.5,
       duration: 0.4,
-      ease: "easeOut",
     },
   },
 };
@@ -61,7 +58,6 @@ const mobileMenuVariants = {
     height: "auto",
     transition: {
       duration: 0.3,
-      ease: "easeOut",
     },
   },
   exit: {
@@ -69,7 +65,6 @@ const mobileMenuVariants = {
     height: 0,
     transition: {
       duration: 0.2,
-      ease: "easeIn",
     },
   },
 };
@@ -90,7 +85,7 @@ export function Navbar() {
     <motion.header
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      transition={{ duration: 0.5, ease: "easeOut" }}
+      transition={{ duration: 0.5 }}
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         isScrolled ? "bg-card/95 backdrop-blur-md shadow-sm" : "bg-transparent",
