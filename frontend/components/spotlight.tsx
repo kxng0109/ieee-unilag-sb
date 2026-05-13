@@ -5,7 +5,7 @@ const Spotlight = () => {
     <div className='flex flex-col xl:flex-row min-h-fit justify-center items-center gap-10 xl:px-20 px-6 py-12 md:py-16 xl:py-20'>
       <div className='w-full xl:w-auto flex justify-center'>
         <Image
-          src={`/image-14.png`}
+          src={`/Image-16.jpg`}
           alt="IEEE UNILAG"
           width={453}
           height={365}

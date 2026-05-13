@@ -41,17 +41,6 @@ const imageVariants = {
   },
 };
 
-const statsContainerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1,
-      delayChildren: 0.8,
-    },
-  },
-};
-
 const statItemVariants = {
   hidden: { opacity: 0, y: 20, scale: 0.95 },
   visible: {
@@ -86,13 +75,6 @@ function StatCard({ value, label, index }: StatCardProps) {
     </motion.div>
   );
 }
-
-const stats = [
-  { value: "500+", label: "Active Members" },
-  { value: "120+", label: "Events Annually" },
-  { value: "15", label: "Technical Societies" },
-  { value: "Global", label: "Active Members" },
-];
 
 export function Hero() {
   return (
@@ -186,23 +168,6 @@ export function Hero() {
             />
           </motion.div>
         </div>
-
-        {/* Stats Section */}
-        <motion.div
-          variants={statsContainerVariants}
-          initial="hidden"
-          animate="visible"
-          className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 py-8 lg:py-12"
-        >
-          {stats.map((stat, index) => (
-            <StatCard
-              key={stat.label + index}
-              value={stat.value}
-              label={stat.label}
-              index={index}
-            />
-          ))}
-        </motion.div>
       </div>
     </section>
   );
