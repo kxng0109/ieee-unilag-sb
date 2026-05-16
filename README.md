@@ -2,6 +2,31 @@
 
 Repository for IEEE Unilag Student Branch website and APIs.
 
+## Team
+
+This project is built and maintained by the IEEE UNILAG Student Branch web team.
+
+**Project Lead**
+- Webmaster — Otitodilichukwu Osakwe ([@tito-osakwe](https://github.com/tito-osakwe))
+
+**Frontend Developers**
+- Eyitayo Obembe
+- Femi Oyetade
+- Fortune Uchegbu
+- Adedamola Adeyemi
+- Demilade Ayeku
+
+**Backend Developers**
+- Truelife Agada
+- Joshua Ike
+- Semilore Omotade-Michaels
+
+**UI/UX Design**
+- Afolabi Olanrewaju
+
+**Repository Maintainer**
+- [@kxng0109](https://github.com/kxng0109)
+
 ## Structure
 
 - `backend/` — Node/Express API (TypeScript)
