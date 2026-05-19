@@ -8,6 +8,7 @@ import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
+
 const navLinks = [
   { name: "About", href: "#about" },
   { name: "Events", href: "#events" },
@@ -69,9 +70,11 @@ const mobileMenuVariants = {
   },
 };
 
-export function Navbar() {
-  const [isOpen, setIsOpen] = React.useState(false);
-  const [isScrolled, setIsScrolled] = React.useState(false);
+export function Navbar({menuOpen, setMenuOpen}: {
+    menuOpen: boolean,
+    setMenuOpen: React.Dispatch<React.SetStateAction<boolean>>
+}) {
+const [isScrolled, setIsScrolled] = React.useState(false);
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -80,6 +83,16 @@ export function Navbar() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  React.useEffect(() => {
+    if (menuOpen) {
+      document.body.classList.add("overflow-hidden");
+    } else {
+      document.body.classList.remove("overflow-hidden");
+    }
+    return () => document.body.classList.remove("overflow-hidden");
+  }, [menuOpen]);
+
 
   return (
     <motion.header
@@ -148,22 +161,22 @@ export function Navbar() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
-            onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2 text-foreground"
+            onClick={() => setMenuOpen(!menuOpen)}
+            className="lg:hidden p-2 text-foreground hover:cursor-pointer"
             aria-label="Toggle menu"
           >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
+            {menuOpen ? <X size={24} /> : <Menu size={24} />}
           </motion.button>
         </div>
 
         {/* Mobile Navigation */}
-        {isOpen && (
+        {menuOpen && (
           <motion.div
             variants={mobileMenuVariants}
             initial="hidden"
             animate="visible"
             exit="exit"
-            className="lg:hidden overflow-hidden"
+            className="lg:hidden overflow-hidden bg-card/95"
           >
             <div className="flex flex-col gap-4 py-4 border-t border-border">
               {navLinks.map((link, index) => (
@@ -175,7 +188,7 @@ export function Navbar() {
                 >
                   <Link
                     href={link.href}
-                    onClick={() => setIsOpen(false)}
+                    onClick={() => setMenuOpen(false)}
                     className="block text-base font-medium text-foreground/80 transition-colors hover:text-primary py-2"
                   >
                     {link.name}
