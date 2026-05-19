@@ -13,7 +13,7 @@ const statArray: arrayStat[] = [
   { users: "500+",   label: "Active Members" },
   { users: "120+",   label: "Events Annually" },  
   { users: "15",     label: "Technical Societies" },
-  { users: "Global", label: "Global Reach" },  
+  { users: "Global", label: "Active Members" },  
 ]
 
 const containerVariants = {
@@ -30,7 +30,7 @@ const containerVariants = {
 function Stats() {
   return (
     <motion.div
-      className="flex flex-wrap justify-center gap-6 items-center py-10"
+      className="flex flex-wrap justify-center gap-4 items-center py-10"
       variants={containerVariants}
       initial="hidden"
       whileInView="visible"
