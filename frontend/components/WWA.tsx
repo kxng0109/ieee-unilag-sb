@@ -58,7 +58,7 @@ const WWA = () => {
           return (
             <motion.div
               key={image}
-              className="relative aspect-[4/3] w-full md:min-w-55 sm:min-w-40 min-w-35 max-w-65 mx-auto overflow-hidden rounded-lg"
+              className="relative aspect-4/3 w-full md:min-w-45 lg:min-w-40 sm:min-w-45 min-w-35 max-w-55 mx-auto overflow-hidden rounded-lg"
               initial={{ scale: 0.8, opacity: 0 }}
               whileInView={{ scale: 1, opacity: 1 }}
               transition={{
