@@ -7,6 +7,7 @@ import { motion } from "motion/react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { menu } from "motion/react-client";
 
 
 const navLinks = [
@@ -71,11 +72,20 @@ const mobileMenuVariants = {
 };
 
 export function Navbar({menuOpen, setMenuOpen}: {
-    menuOpen: boolean,
-    setMenuOpen: React.Dispatch<React.SetStateAction<boolean>>
+  menuOpen: boolean,
+  setMenuOpen: React.Dispatch<React.SetStateAction<boolean>>
 }) {
-const [isScrolled, setIsScrolled] = React.useState(false);
-
+  const [isScrolled, setIsScrolled] = React.useState(false);
+  const handleScroll = (id: string) => {
+    setMenuOpen(!menuOpen)
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  }
   React.useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
@@ -100,11 +110,11 @@ const [isScrolled, setIsScrolled] = React.useState(false);
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        isScrolled ? "bg-card/95 backdrop-blur-md shadow-sm" : "bg-transparent",
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-300"
       )}
     >
-      <nav className="container mx-auto px-4 lg:px-8">
+      <nav 
+      className={`container mx-auto px-4 lg:px-8 bg-card/95 ${isScrolled ? 'shadow-sm backdrop-blur-md' : ''}`}>
         <div className="flex h-16 items-center justify-between lg:h-20">
           {/* Logo */}
           <motion.div
@@ -188,7 +198,7 @@ const [isScrolled, setIsScrolled] = React.useState(false);
                 >
                   <Link
                     href={link.href}
-                    onClick={() => setMenuOpen(false)}
+                    onClick={() => handleScroll(link.href)}
                     className="block text-base font-medium text-foreground/80 transition-colors hover:text-primary py-2"
                   >
                     {link.name}

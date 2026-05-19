@@ -31,7 +31,7 @@ export const EventsSection = () => {
     ]
     
   return (
-    <section className= 'font-space w-full py-20 lg:pt-8 px-6 md:px-12 lg:px-17 bg-[#1E293B] text-white flex flex-col gap-y-15 lg:gap-y-24 justify-between items-center'>
+    <section id="events" className= 'font-space w-full py-20 lg:pt-8 px-6 md:px-12 lg:px-17 bg-[#1E293B] text-white flex flex-col gap-y-15 lg:gap-y-24 justify-between items-center'>
         <div className = 'flex w-full justify-center lg:justify-between items-center'>
             <h1 className="font-bold text-3xl">Upcoming Events</h1>
             <button 

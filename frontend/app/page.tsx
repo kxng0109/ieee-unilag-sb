@@ -15,6 +15,11 @@ export default function Home() {
   return (
     <div className="min-h-screen items-center justify-center font-sans">
       <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen}/>
+      {menuOpen && 
+      <div 
+        onClick={() => setMenuOpen(false)} 
+        className="fixed inset-0 z-40 bg-black/50 backdrop-blur-sm" 
+      />}
       <main 
       inert = {menuOpen ? true : undefined}
       className="">
