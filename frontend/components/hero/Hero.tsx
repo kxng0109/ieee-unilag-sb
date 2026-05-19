@@ -53,28 +53,28 @@ const statItemVariants = {
   },
 };
 
-interface StatCardProps {
-  value: string;
-  label: string;
-  index: number;
-}
+// interface StatCardProps {
+//   value: string;
+//   label: string;
+//   index: number;
+// }
 
-function StatCard({ value, label, index }: StatCardProps) {
-  return (
-    <motion.div
-      variants={statItemVariants}
-      custom={index}
-      className="flex flex-col items-center justify-center bg-card rounded-2xl p-6 shadow-sm border border-border hover:shadow-md transition-shadow"
-    >
-      <span className="text-3xl lg:text-4xl font-bold text-primary">
-        {value}
-      </span>
-      <span className="text-sm text-muted-foreground mt-1 text-center">
-        {label}
-      </span>
-    </motion.div>
-  );
-}
+// function StatCard({ value, label, index }: StatCardProps) {
+//   return (
+//     <motion.div
+//       variants={statItemVariants}
+//       custom={index}
+//       className="flex flex-col items-center justify-center bg-card rounded-2xl p-6 shadow-sm border border-border hover:shadow-md transition-shadow"
+//     >
+//       <span className="text-3xl lg:text-4xl font-bold text-primary">
+//         {value}
+//       </span>
+//       <span className="text-sm text-muted-foreground mt-1 text-center">
+//         {label}
+//       </span>
+//     </motion.div>
+//   );
+// }
 
 export function Hero() {
   return (

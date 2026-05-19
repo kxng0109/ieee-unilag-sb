@@ -7,6 +7,8 @@ import { motion } from "motion/react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { menu } from "motion/react-client";
+
 
 const navLinks = [
   { name: "About", href: "#about" },
@@ -69,10 +71,21 @@ const mobileMenuVariants = {
   },
 };
 
-export function Navbar() {
-  const [isOpen, setIsOpen] = React.useState(false);
+export function Navbar({menuOpen, setMenuOpen}: {
+  menuOpen: boolean,
+  setMenuOpen: React.Dispatch<React.SetStateAction<boolean>>
+}) {
   const [isScrolled, setIsScrolled] = React.useState(false);
-
+  const handleScroll = (id: string) => {
+    setMenuOpen(!menuOpen)
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  }
   React.useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
@@ -81,17 +94,27 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  React.useEffect(() => {
+    if (menuOpen) {
+      document.body.classList.add("overflow-hidden");
+    } else {
+      document.body.classList.remove("overflow-hidden");
+    }
+    return () => document.body.classList.remove("overflow-hidden");
+  }, [menuOpen]);
+
+
   return (
     <motion.header
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        isScrolled ? "bg-card/95 backdrop-blur-md shadow-sm" : "bg-transparent",
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-300"
       )}
     >
-      <nav className="container mx-auto px-4 lg:px-8">
+      <nav 
+      className={`container mx-auto px-4 lg:px-8 bg-card/95 ${isScrolled ? 'shadow-sm backdrop-blur-md' : ''}`}>
         <div className="flex h-16 items-center justify-between lg:h-20">
           {/* Logo */}
           <motion.div
@@ -148,22 +171,22 @@ export function Navbar() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
-            onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2 text-foreground"
+            onClick={() => setMenuOpen(!menuOpen)}
+            className="lg:hidden p-2 text-foreground hover:cursor-pointer"
             aria-label="Toggle menu"
           >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
+            {menuOpen ? <X size={24} /> : <Menu size={24} />}
           </motion.button>
         </div>
 
         {/* Mobile Navigation */}
-        {isOpen && (
+        {menuOpen && (
           <motion.div
             variants={mobileMenuVariants}
             initial="hidden"
             animate="visible"
             exit="exit"
-            className="lg:hidden overflow-hidden"
+            className="lg:hidden overflow-hidden bg-card/95"
           >
             <div className="flex flex-col gap-4 py-4 border-t border-border">
               {navLinks.map((link, index) => (
@@ -175,7 +198,7 @@ export function Navbar() {
                 >
                   <Link
                     href={link.href}
-                    onClick={() => setIsOpen(false)}
+                    onClick={() => handleScroll(link.href)}
                     className="block text-base font-medium text-foreground/80 transition-colors hover:text-primary py-2"
                   >
                     {link.name}
