@@ -26,7 +26,7 @@ function Stat({ label, users }: StatDes) {
     <motion.div
       variants={cardVariants}
       whileHover={{ y: -4, scale: 1.02, transition: { duration: 0.2 } }}
-      className="font-sans flex flex-col h-44.25 w-full max-w-75 rounded-3xl border-[3px] p-2.5 justify-center text-center border-[#E2E8F0] bg-white"
+      className="font-sans flex flex-col h-44.25 w-full max-w-65 rounded-3xl border-[3px] p-2.5 justify-center text-center border-[#E2E8F0] bg-white"
     >
       <span className="text-[40px] md:text-[56px] font-bold text-[#00629B] leading-none">
         {users}
