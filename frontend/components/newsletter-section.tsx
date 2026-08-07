@@ -18,7 +18,7 @@ export function NewsletterSection() {
     setStatus("loading");
     setMessage("");
     try {
-      const res = await fetch(`${API_URL}/api/newsletter/signup`, {
+      const res = await fetch(`${API_URL}/api/v1/newsletter/signup`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email: email.trim() }),
